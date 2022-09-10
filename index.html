@@ -24,9 +24,18 @@
             <button type="button" id="button-add" onclick="add()"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
         <div id="sortby">
-            <label for="">Sort</label>
-            <button>Addded</button>
-            <button>Priority</button>
+            <button onclick="sortByAdded()">Sort By Addded</button>
+            <select name="" id="select-filter" onchange="filterPriority(this)">
+                <option value="">No Filter</option>
+                <option value="1">Filter by Priority 1</option>
+                <option value="2">Filter by Priority 2</option>
+                <option value="3">Filter by Priority 3</option>
+                <option value="4">Filter by Priority 4</option>
+            </select>
+            <!-- <button onclick="filterPriority(1)">P1</button>
+            <button onclick="filterPriority(2)">P2</button>
+            <button onclick="filterPriority(3)">P3</button>
+            <button onclick="filterPriority(4)">P4</button> -->
         </div>
         <div id="content">
             <ul class="" id="list">

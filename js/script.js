@@ -6,23 +6,42 @@ function formReset() {
     document.getElementById('input-priority').value = 1;
 }
 
-function show() {
+function show(no) {
     formReset();
-
     let listElement = document.getElementById('list');
     listElement.innerHTML = "";
-    for (let i = 0; i < data.length; i++) {
-        let newText = data[i].text;
-        let newElement = `<li class='list-text list-priority-${data[i].priority}'>
-                            <div class="list-text-left">
-                                <button class='list-check' onclick='complete(${i})'></button>${newText}
-                            </div>
-                            <div class="list-text-right">
-                                <i class="fa-solid fa-pen-to-square button-edit" onclick="edit(${i})"></i>
-                                <i class="fa-solid fa-trash-can button-destroy" onclick="destroy(${i})"></i>
-                            </div>
-                          </li>`
-        listElement.innerHTML += newElement;
+    
+    if (no) {
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].priority === no) {
+                
+                let newText = data[i].text;
+                let newElement = `<li class='list-text list-priority-${data[i].priority}'>
+                                    <div class="list-text-left">
+                                        <button class='list-check' onclick='complete(${i})'></button>${newText}
+                                    </div>
+                                    <div class="list-text-right">
+                                        <i class="fa-solid fa-pen-to-square button-edit" onclick="edit(${i})"></i>
+                                        <i class="fa-solid fa-trash-can button-destroy" onclick="destroy(${i})"></i>
+                                    </div>
+                                </li>`
+                listElement.innerHTML += newElement;
+            }
+        }
+    } else {
+        for (let i = 0; i < data.length; i++) {
+            let newText = data[i].text;
+            let newElement = `<li class='list-text list-priority-${data[i].priority}'>
+                                <div class="list-text-left">
+                                    <button class='list-check' onclick='complete(${i})'></button>${newText}
+                                </div>
+                                <div class="list-text-right">
+                                    <i class="fa-solid fa-pen-to-square button-edit" onclick="edit(${i})"></i>
+                                    <i class="fa-solid fa-trash-can button-destroy" onclick="destroy(${i})"></i>
+                                </div>
+                            </li>`
+            listElement.innerHTML += newElement;
+        }
     }
 }
 
@@ -131,6 +150,19 @@ function edit(index) {
     document.getElementById("input-text-label").innerHTML = "Edit Todo";
 }
 
+function sortByAdded() {
+    data.reverse();
+    show();
+}
+
+function filterPriority(params) { 
+    let no = Number(params.value)
+    if (!no) {
+        no = undefined;
+    }
+    show(no);
+}
+
 let data = [
     {
         text: "Go to shop",
@@ -173,5 +205,8 @@ let data = [
         priority: 1
     },
 ];
+
+let sortByAddedStatus = false;
+let sortByPriorityStatus = false;
 
 show();
