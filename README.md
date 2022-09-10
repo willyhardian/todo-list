@@ -21,8 +21,9 @@
 - HTML
 - CSS
 - Vanilla JavaScript
-- [Sweet Alert JavaScript](https://sweetalert2.github.io/)
 - Array of Objects (No Database)
+- [Sweet Alert JavaScript](https://sweetalert2.github.io/)
+- [Font Awesome](https://fontawesome.com/)
 
 
 ## Features
