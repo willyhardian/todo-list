@@ -1,20 +1,3 @@
-# To-do List App
-![Demo App](screenshot.png)
-See the app demo in https://willyhardian.github.io/todolist/
-
-The app is created with HTML, CSS, Vanilla JavaScript, Sweet Alert JavaScript with Array of Object Variables.
-
-Features:
-- Create new task
-- Update task
-- Delete task
-- Complete task
-- Priority of Task from 1-4. 1 is the most important
-- Sort by latest added or the first added
-- Filter by priority
-- Show alert message with Sweet Alert JavaScript https://sweetalert2.github.io/
-
-
 # To-do List
 > Live demo [_here_](https://willyhardian.github.io/todolist/). <!-- If you have the project hosted somewhere, include the link here. -->
 
