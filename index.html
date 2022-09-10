@@ -9,10 +9,12 @@
     <title>Todo List</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <h1 id="brand-title">Todo List</h1>
+        <label id="input-text-label" for="input-text">Add Todo</label><span><button id="button-cancel" onclick="formReset()">cancel edit</button></span>
         <div id="container-input">
-            <input type="text" id="input-text" placeholder="Add new todo">
+            <input type="hidden" id="input-index">
+            <input type="text" id="input-text" placeholder="Task">
             <select name="" id="input-priority">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -21,7 +23,12 @@
             </select>
             <button type="button" id="button-add" onclick="add()"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
-        <div>
+        <div id="sortby">
+            <label for="">Sort</label>
+            <button>Addded</button>
+            <button>Priority</button>
+        </div>
+        <div id="content">
             <ul class="" id="list">
                 <li>Lorem ipsum dolor sit amet.</li>
                 <li>Lorem ipsum dolor sit amet.</li>
