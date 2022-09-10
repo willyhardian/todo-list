@@ -6,6 +6,11 @@ function formReset() {
     document.getElementById('input-priority').value = 1;
 }
 
+function additionalFeatureReset() {
+    document.getElementById('select-filter').value = "";
+    sortByAddedStatus = false;
+}
+
 function show(no) {
     formReset();
     let listElement = document.getElementById('list');
@@ -90,6 +95,7 @@ function add() {
             title: message,
             text: `${text}`,
         });
+        additionalFeatureReset();
     }
     
 }
@@ -106,12 +112,14 @@ function remove(index) {
         data.push(result[i]);
     }
     result = [];
+    additionalFeatureReset();
 }
 
 function complete(index) {
     let text = data[index].text;
     remove(index);
     show();
+    additionalFeatureReset();
     const Toast = Swal.mixin({
         toast: true,
         position: 'bottom-end',
@@ -135,11 +143,13 @@ function destroy(index) {
     let text = data[index].text;
     remove(index);
     show();
+    additionalFeatureReset();
     Swal.fire({
         icon: 'success',
         title: 'Todo is removed',
         text: `${text}`
     });
+    
 }
 
 function edit(index) {
@@ -153,6 +163,7 @@ function edit(index) {
 function sortByAdded() {
     data.reverse();
     show();
+    additionalFeatureReset();
 }
 
 function filterPriority(params) { 
@@ -207,6 +218,5 @@ let data = [
 ];
 
 let sortByAddedStatus = false;
-let sortByPriorityStatus = false;
 
 show();
