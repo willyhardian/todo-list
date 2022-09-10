@@ -1,5 +1,5 @@
 function formReset() {
-    document.getElementById("input-text-label").innerHTML = "Add Todo";
+    document.getElementById("input-text-label").innerHTML = "Add To-do";
     document.getElementById("button-cancel").style.display = "none";
     document.getElementById('input-index').value = "";
     document.getElementById('input-text').value = "";
@@ -70,11 +70,11 @@ function add() {
         let index = document.getElementById('input-index').value;
         
         if (index) {
-            message = 'Update todo';
+            message = 'Update to-do';
             data[index].text = text;
             data[index].priority = priority;
         } else {
-            message = 'New todo';
+            message = 'New to-do';
             data.push({text, priority});
         }
         show();
@@ -134,7 +134,7 @@ function complete(index) {
       
     Toast.fire({
         icon: 'success',
-        title: 'Todo complete',
+        title: 'To-do complete',
         text: `${text}`
     });
 }
@@ -146,7 +146,7 @@ function destroy(index) {
     additionalFeatureReset();
     Swal.fire({
         icon: 'success',
-        title: 'Todo is removed',
+        title: 'To-do is removed',
         text: `${text}`
     });
     
@@ -157,7 +157,7 @@ function edit(index) {
     document.getElementById("input-text").value = data[index].text;
     document.getElementById("input-priority").value = data[index].priority;
     document.getElementById("button-cancel").style.display = "inline";
-    document.getElementById("input-text-label").innerHTML = "Edit Todo";
+    document.getElementById("input-text-label").innerHTML = "Edit To-do";
 }
 
 function sortByAdded() {
